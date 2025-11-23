@@ -2,11 +2,18 @@
 
 Proyecto web para un gimnasio, desarrollado como parte de mi práctica de **HTML + CSS** y como base para futuras mejoras (JavaScript, backend, testing, etc.).
 
-## 🧩 Tecnologías utilizadas
+🧰 Tecnologías utilizadas
 
-- **HTML5** para la estructura de la página  
-- **CSS3** (flexbox + grid + responsive design)  
-- Tipografía de Google Fonts (**Montserrat**)
+HTML5 — estructura general
+
+CSS3 — diseño completo + grid + flexbox + responsive
+
+JavaScript Vanilla — slider/carrusel dinámico
+
+Google Fonts (Montserrat)
+
+Diseño mobile-first
+
 
 ## 🎯 Objetivo del proyecto
 
@@ -21,8 +28,14 @@ Simular el sitio web de un gimnasio real, incluyendo:
 
 ## 📂 Estructura del proyecto
 
-```bash
 Proyecto-Gym/
-├── index.html        # Página principal
-├── style.css         # Estilos globales
-└── images/           # Imágenes del sitio (hero, instalaciones, etc.)
+│
+├── index.html          # Página principal
+├── style.css           # Estilos globales
+├── script.js           # Lógica del slider/carrusel
+│
+└── images/             # Imágenes del sitio
+      gym-hero.jpg
+      gym-weights.jpg
+      gym-functional.jpg
+      gym-cardio.jpg
