@@ -110,4 +110,5 @@ a {
 .hero__title {
   font-size: clamp(2rem, 3vw + 1rem, 3rem);
   margin-bottom: 0.75rem;
-  font-weight: 7
+  font-weight: 700;
+}
