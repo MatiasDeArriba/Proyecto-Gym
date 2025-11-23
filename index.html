@@ -1,49 +1,250 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const slides = document.querySelectorAll(".slider__slide");
-  const prevBtn = document.querySelector(".slider__btn--prev");
-  const nextBtn = document.querySelector(".slider__btn--next");
-  const dots = document.querySelectorAll(".slider__dot");
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PowerGym | Tu gimnasio de confianza</title>
 
-  let currentSlide = 0;
+  <!-- Fuente -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  function showSlide(index) {
-    if (index >= slides.length) {
-      currentSlide = 0;
-    } else if (index < 0) {
-      currentSlide = slides.length - 1;
-    } else {
-      currentSlide = index;
-    }
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    slides.forEach((slide) => {
-      slide.classList.remove("slider__slide--active");
-    });
+<body>
 
-    dots.forEach((dot) => {
-      dot.classList.remove("slider__dot--active");
-    });
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header__content">
+      <div class="logo">
+        <span class="logo__icon">🏋️‍♂️</span>
+        <span class="logo__text">PowerGym</span>
+      </div>
 
-    slides[currentSlide].classList.add("slider__slide--active");
-    dots[currentSlide].classList.add("slider__dot--active");
-  }
+      <nav class="nav">
+        <a href="#inicio" class="nav__link">Inicio</a>
+        <a href="#servicios" class="nav__link">Servicios</a>
+        <a href="#planes" class="nav__link">Planes</a>
+        <a href="#instalaciones" class="nav__link">Instalaciones</a>
+        <a href="#contacto" class="nav__link nav__link--cta">Contacto</a>
+      </nav>
+    </div>
+  </header>
 
-  nextBtn.addEventListener("click", function () {
-    showSlide(currentSlide + 1);
-  });
+  <!-- MAIN -->
+  <main id="inicio">
 
-  prevBtn.addEventListener("click", function () {
-    showSlide(currentSlide - 1);
-  });
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero__content">
 
-  dots.forEach((dot) => {
-    dot.addEventListener("click", function () {
-      const slideIndex = parseInt(dot.getAttribute("data-slide"));
-      showSlide(slideIndex);
-    });
-  });
+        <div class="hero__text">
+          <h1 class="hero__title">Entrená fuerte, viví mejor.</h1>
+          <p class="hero__subtitle">
+            Gimnasio equipado, entrenadores certificados y planes pensados para todos los niveles.
+          </p>
 
-  setInterval(function () {
-    showSlide(currentSlide + 1);
-  }, 5000);
-});
-      
+          <div class="hero__actions">
+            <a href="#planes" class="btn btn--primary">Ver planes</a>
+            <a href="#contacto" class="btn btn--secondary">Agendar visita</a>
+          </div>
+
+          <p class="hero__detail">
+            Abierto de <strong>lunes a sábado</strong> · Zona Sur · Primera clase sin cargo
+          </p>
+        </div>
+
+        <div class="hero__image">
+          <img src="images/gym-hero.jpg" alt="Personas entrenando en PowerGym">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="section section--light">
+      <div class="container">
+        <h2 class="section__title">Servicios</h2>
+        <p class="section__subtitle">
+          Todo lo que necesitás para entrenar de forma completa.
+        </p>
+
+        <div class="grid grid--3">
+          <article class="card">
+            <h3 class="card__title">Musculación</h3>
+            <ul class="card__list">
+              <li>Máquinas guiadas</li>
+              <li>Peso libre</li>
+              <li>Profesores en sala</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Clases funcionales</h3>
+            <ul class="card__list">
+              <li>HIIT · GAP · Funcional</li>
+              <li>Grupos reducidos</li>
+              <li>Alta quema calórica</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Personal Trainer</h3>
+            <ul class="card__list">
+              <li>Plan personalizado</li>
+              <li>Revisión semanal</li>
+              <li>Seguimiento por WhatsApp</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANES -->
+    <section id="planes" class="section">
+      <div class="container">
+        <h2 class="section__title">Planes</h2>
+        <p class="section__subtitle">
+          Elegí el plan que mejor se adapte a tus objetivos.
+        </p>
+
+        <div class="grid grid--3">
+          <article class="card card--highlight">
+            <h3 class="card__title">Mensual</h3>
+            <p class="card__price">$X.XXX</p>
+            <ul class="card__list">
+              <li>Acceso a sala de musculación</li>
+              <li>Rutina general</li>
+              <li>Asesoramiento básico</li>
+            </ul>
+            <button class="btn btn--full btn--primary">Seleccionar</button>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Full</h3>
+            <p class="card__price">$X.XXX</p>
+            <ul class="card__list">
+              <li>Acceso total al gimnasio</li>
+              <li>Clases grupales ilimitadas</li>
+              <li>Evaluación mensual</li>
+            </ul>
+            <button class="btn btn--full btn--outline">Seleccionar</button>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Personalizado</h3>
+            <p class="card__price">Consultar</p>
+            <ul class="card__list">
+              <li>Personal trainer dedicado</li>
+              <li>Plan adaptado a tu objetivo</li>
+              <li>Seguimiento semanal</li>
+            </ul>
+            <button class="btn btn--full btn--outline">Consultar</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSTALACIONES (SLIDER) -->
+    <section id="instalaciones" class="section section--light">
+      <div class="container">
+        <h2 class="section__title">Instalaciones</h2>
+        <p class="section__subtitle">
+          Espacios pensados para entrenar cómodo y con buena energía.
+        </p>
+
+        <div class="slider">
+          <button class="slider__btn slider__btn--prev" aria-label="Imagen anterior">‹</button>
+
+          <div class="slider__track">
+            <div class="slider__slide slider__slide--active">
+              <img src="images/gym-weights.jpg" alt="Sala de pesas del gimnasio">
+              <div class="slider__caption">Sala de pesas completa</div>
+            </div>
+
+            <div class="slider__slide">
+              <img src="images/gym-functional.jpg" alt="Zona funcional del gimnasio">
+              <div class="slider__caption">Zona funcional para clases y circuitos</div>
+            </div>
+
+            <div class="slider__slide">
+              <img src="images/gym-cardio.jpg" alt="Sector de cardio del gimnasio">
+              <div class="slider__caption">Sector de cardio con cintas y bicicletas</div>
+            </div>
+          </div>
+
+          <button class="slider__btn slider__btn--next" aria-label="Imagen siguiente">›</button>
+        </div>
+
+        <div class="slider__dots">
+          <button class="slider__dot slider__dot--active" data-slide="0" aria-label="Ver imagen 1"></button>
+          <button class="slider__dot" data-slide="1" aria-label="Ver imagen 2"></button>
+          <button class="slider__dot" data-slide="2" aria-label="Ver imagen 3"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section section--contact">
+      <div class="container contact__grid">
+
+        <div>
+          <h2 class="section__title section__title--light">Contacto</h2>
+          <p class="section__subtitle section__subtitle--light">
+            Coordiná una visita o tu clase de prueba.
+          </p>
+
+          <ul class="contact__info">
+            <li><strong>Dirección:</strong> Calle Ficticia 123, Zona Sur</li>
+            <li><strong>Teléfono:</strong> +54 9 11 1234 5678</li>
+            <li><strong>Email:</strong> contacto@powergym.com</li>
+            <li><strong>Horarios:</strong> Lun a Vie 7 a 22 hs · Sáb 9 a 18 hs</li>
+          </ul>
+        </div>
+
+        <form class="form">
+          <div class="form__group">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" type="text" placeholder="Tu nombre" required />
+          </div>
+
+          <div class="form__group">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="tucorreo@mail.com" required />
+          </div>
+
+          <div class="form__group">
+            <label for="objetivo">Objetivo</label>
+            <select id="objetivo">
+              <option value="bajar-peso">Bajar de peso</option>
+              <option value="ganar-masa">Ganar masa muscular</option>
+              <option value="salud-general">Salud general</option>
+              <option value="rendimiento">Rendimiento deportivo</option>
+            </select>
+          </div>
+
+          <div class="form__group">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" rows="4" placeholder="Contanos qué estás buscando"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full">Enviar mensaje</button>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__content">
+      <p>© 2025 PowerGym · Proyecto desarrollado por Matías De Arriba.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
