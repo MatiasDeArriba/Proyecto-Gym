@@ -28,14 +28,16 @@ Simular el sitio web de un gimnasio real, incluyendo:
 
 ## 📂 Estructura del proyecto
 
+```bash
 Proyecto-Gym/
 │
-├── index.html          # Página principal
+├── index.html          # Página principal del sitio
 ├── style.css           # Estilos globales
 ├── script.js           # Lógica del slider/carrusel
 │
-└── images/             # Imágenes del sitio
+└── images/             # Imágenes del proyecto
       gym-hero.jpg
       gym-weights.jpg
       gym-functional.jpg
       gym-cardio.jpg
+
